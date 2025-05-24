@@ -25,3 +25,9 @@ int timerTimeOver() {
 
     return 0;
 }
+
+long long current_timestamp() {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return (long long)(ts.tv_sec * 1000LL + ts.tv_nsec / 1000000LL);
+}
