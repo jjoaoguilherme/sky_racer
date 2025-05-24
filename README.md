@@ -30,7 +30,7 @@ Ao final da partida, o nome e a pontuação do jogador são salvos em um **ranki
 ## 🔨 Ferramentas
 
 [![Apresentação](https://img.shields.io/badge/Apresentação-084ea3?style=for-the-badge&logo=canva&logoColor=white)](https://www.canva.com/design/DAGoTe3mr_w/3Pj9c-I25zYfPGYk2Zd1uA/edit?utm_content=DAGoTe3mr_w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-[![YouTube](https://img.shields.io/badge/YouTube-b50404?style=for-the-badge&logo=youtube&logoColor=white)]([https://youtube.com/playlist?list=PLql-8xGSZOnC54kFiA03umnxNXTRMA4z9&si=_I32WK-SXjsJZ-Jb](https://youtu.be/arxaolbo40A))
+[![YouTube](https://img.shields.io/badge/YouTube-b50404?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/arxaolbo40A)
 
 
 ## 🧠 Funcionalidades
