@@ -1,12 +1,14 @@
 #ifndef METEORO_H
 #define METEORO_H
 
-#include "nave.h"
+#include "nave.h" 
 
-typedef struct Meteoro {
+typedef struct meteoro {
     int x, y;
-    struct Meteoro *prox;
+    int tipo;
+    struct meteoro *prox;
 } Meteoro;
+
 typedef Meteoro ListaMeteoro;
 
 ListaMeteoro* atualizar_meteoros(ListaMeteoro *lista);
