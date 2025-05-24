@@ -3,3 +3,9 @@ all:
 
 clean:
 	rm -f sky_racer
+
+open:
+	./abrir_terminal.sh
+
+run: all
+	./abrir_terminal.sh
