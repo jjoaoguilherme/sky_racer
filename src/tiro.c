@@ -2,9 +2,8 @@
 #include <stdlib.h>
 
 #include "screen.h"
-
 #include "tiro.h"
-#include "meteoro.h"
+#include "meteoro.h" 
 #include "nave.h"
 
 ListaTiro* inserir_tiro(ListaTiro *lista, int x, int y) {
@@ -38,7 +37,7 @@ void verificar_colisao(ListaMeteoro **meteoros, ListaTiro **tiros, int *pontos) 
     while (t) {
         Meteoro *m = *meteoros, *m_ant = NULL;
         while (m) {
-            if (t->x == m->x && t->y == m->y) {
+            if (t->x >= m->x && t->x <= m->x + 10 && t->y >= m->y && t->y <= m->y + 4) {
                 (*pontos)++;
                 if (m_ant == NULL) *meteoros = m->prox;
                 else m_ant->prox = m->prox;
@@ -64,16 +63,22 @@ void destruir_lista_tiros(ListaTiro *lista) {
     }
 }
 
+
+void desenhar_cometa(Meteoro *m);
+
 void desenhar_tela(Nave *n, ListaMeteoro *m, ListaTiro *t, int pontos) {
     screenSetCharXY(n->x, n->y, '^'); 
+
     while (m) {
-        screenSetCharXY(m->x, m->y, '*'); 
+        desenhar_cometa(m);
         m = m->prox;
     }
+
     while (t) {
         screenSetCharXY(t->x, t->y, '|'); 
         t = t->prox;
     }
+
     char score[30];
     sprintf(score, "Pontos: %d", pontos);
     screenSetStringXY(2, 1, score);
