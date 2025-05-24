@@ -43,3 +43,6 @@ int screenGetHeight() {
     getmaxyx(stdscr, y, x);
     return y;
 }
+void clearScreen() {
+    printf("\033[2J\033[H");
+}
