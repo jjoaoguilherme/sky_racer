@@ -3,6 +3,9 @@
 
 #include "nave.h"
 #include "meteoro.h"
+#include "../cli-lib/timer.h"  
+
+#define INTERVALO_TIRO 2000  
 
 typedef struct Tiro {
     int x, y;
