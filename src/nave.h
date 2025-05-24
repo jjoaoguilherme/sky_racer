@@ -7,6 +7,7 @@ typedef struct {
 
 Nave* criar_nave();
 void mover_nave(Nave *n, int comando);
+void desenhar_nave(Nave *n);  
 void destruir_nave(Nave *n);
 
 #endif
