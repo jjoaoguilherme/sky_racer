@@ -1,8 +1,11 @@
-#ifndef CLI_LIB_TIMER_H
-#define CLI_LIB_TIMER_H
+#ifndef TIMER_H
+#define TIMER_H
 
-void timerInit(int tempo);
-void timerDestroy();
+#include <time.h>
+
+void timerInit(int ms);
 int timerTimeOver();
+void timerDestroy();
+long long current_timestamp();  
 
 #endif
