@@ -1,32 +1,25 @@
-#include <termios.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/select.h>
-
-static struct termios oldt;
+#include <ncurses.h>
 
 void keyboardInit() {
-    struct termios newt;
-    tcgetattr(STDIN_FILENO, &oldt);
-    newt = oldt;
-    newt.c_lflag &= ~(ICANON | ECHO);
-    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+    cbreak();
+    noecho();
+    keypad(stdscr, TRUE);
+    nodelay(stdscr, TRUE);
+    scrollok(stdscr, FALSE);
 }
 
 void keyboardDestroy() {
-    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 }
 
 int keyhit() {
-    struct timeval tv = {0L, 0L};
-    fd_set fds;
-    FD_ZERO(&fds);
-    FD_SET(STDIN_FILENO, &fds);
-    return select(1, &fds, NULL, NULL, &tv);
+    int ch = getch();
+    if (ch != ERR) {
+        ungetch(ch);
+        return 1;
+    }
+    return 0;
 }
 
 int readch() {
-    unsigned char ch;
-    if (read(STDIN_FILENO, &ch, 1) < 0) return 0;
-    return ch;
+    return getch();
 }
